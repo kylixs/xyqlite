@@ -1,0 +1,21 @@
+#定义变量
+set background = "assets/images/donghaiwan.jpg"
+
+#渐入
+fadein black
+#显示背景图片
+gb print(background)
+
+#开始对话
+mes  东海湾畔，鱼虾嬉戏，好一个风景迷人的地方……
+#下雨效果
+rain
+mes 下雨时别有一番风味……
+mes  故事就是从这里开始……
+#停止下雨
+rainstop
+
+#渐隐
+fadeout black
+#退出
+exit

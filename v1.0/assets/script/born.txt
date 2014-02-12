@@ -1,0 +1,58 @@
+#定义变量
+set background = "assets/images/donghaiwan.jpg"
+set 龙太子 = "assets/images/longtaizi-chat.png"
+
+#渐入
+fadein black
+#显示背景图片
+gb print(background)
+
+#开始对话
+mes  东海湾畔，鱼虾嬉戏，好一个风景迷人的地方……
+#下雨效果
+rain
+mes 下雨时别有一番风味……
+mes  我就是出生在这个地方
+#停止下雨
+rainstop
+#闪烁画面
+flash 255,255,255
+#显示龙太子头像
+cg print(龙太子) 100  107
+mes  不要迷惘，不要愤怒，这就是我了，传说中的【龙太子】是也。
+mes  我好想看看外面的世界是怎么样的，所以离开了无忧无虑的龙宫，踏上我的梦幻之旅……
+
+#定义问题变量
+set sel0 = "年轻的你是否也在追逐梦想呢？"
+#出现选择框
+select print(sel0)
+in
+  我有一颗年轻的不死之心，为梦想而生！
+  我很想去实现梦想，但似乎我的能力……
+  我没有改变生活的勇气。
+out
+#判断选择了哪一项
+if sel0==0
+    shake 30  #窗口震动 30是震动幅度
+	mes 那我们开始行动吧，漫天的星星都等着我们！
+    shake 0   #停止震动
+else if sel0==1
+	mes 人是磨练出来的，我们不去努力怎么能实现传说中的梦想！？
+else if sel0==2
+	mes 那么请你当个看客吧，看看有梦想的人是怎么奋斗的。
+endif
+
+#闪烁一下
+flash 255,255,0
+#开始樱花飞舞效果
+petal
+mes 不管你的选择是什么，反正我会走自己的路，未来在远方……
+mes 梦想在远方，足够远的远方，远到看不到……
+mes ……
+#停止樱花飞舞效果
+pertalstop
+
+#渐隐
+fadeout black
+#退出
+exit
